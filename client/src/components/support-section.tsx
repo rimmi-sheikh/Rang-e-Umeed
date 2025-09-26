@@ -1,6 +1,8 @@
-import { HandHeart, Heart, GraduationCap } from "lucide-react";
+import { HandHeart, Heart, GraduationCap, ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { useState } from "react";
 
 const impactStats = [
   { value: "250+", label: "Women Trained", testId: "stat-women-trained" },
@@ -41,6 +43,13 @@ const donationOptions = [
 ];
 
 export default function SupportSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedDonation, setSelectedDonation] = useState<typeof donationOptions[0] | null>(null);
+
+  const handleDonationClick = (option: typeof donationOptions[0]) => {
+    setSelectedDonation(option);
+    setIsModalOpen(true);
+  };
   return (
     <section id="support" className="py-20 lg:py-32 bg-gradient-to-br from-secondary/30 via-background to-secondary/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -103,6 +112,7 @@ export default function SupportSection() {
                       ? 'bg-accent text-accent-foreground hover:bg-accent/90'
                       : 'bg-primary text-primary-foreground hover:bg-primary/90'
                   }`}
+                  onClick={() => handleDonationClick(option)}
                   data-testid={`button-${option.testId}`}
                 >
                   {option.buttonText}
@@ -142,6 +152,56 @@ export default function SupportSection() {
             </a>
           </div>
         </div>
+
+        {/* Donation Modal */}
+        <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+          <DialogContent className="sm:max-w-md" data-testid="donation-modal">
+            <DialogHeader>
+              <DialogTitle className="font-serif text-2xl text-center">
+                {selectedDonation?.title}
+              </DialogTitle>
+              <DialogDescription className="text-center">
+                Thank you for your interest in supporting Rang-e-Umeed!
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-4 py-4">
+              <div className="bg-primary/10 border border-primary/20 rounded-lg p-4">
+                <h4 className="font-semibold text-card-foreground mb-2">Demo Website Notice</h4>
+                <p className="text-sm text-muted-foreground">
+                  This is a demonstration website for Rang-e-Umeed. Real donation functionality 
+                  would be integrated with secure payment processors like Stripe, PayPal, or local 
+                  Pakistani payment services like JazzCash or EasyPaisa.
+                </p>
+              </div>
+              <div className="space-y-3">
+                <h4 className="font-semibold text-card-foreground">How to Support (When Live):</h4>
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  <li>• Monthly partnerships starting from PKR 2,000/month</li>
+                  <li>• One-time donations of any amount welcome</li>
+                  <li>• Workshop sponsorships: PKR 25,000 per community</li>
+                  <li>• Materials and supplies sponsorship options</li>
+                </ul>
+              </div>
+              <div className="flex flex-col gap-2 pt-4">
+                <Button
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                  onClick={() => window.open('mailto:info@rangeumeed.org?subject=Donation Inquiry', '_blank')}
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Contact Us About Donations
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => setIsModalOpen(false)}
+                  data-testid="button-close-modal"
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );

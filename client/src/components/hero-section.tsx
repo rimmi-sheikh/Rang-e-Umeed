@@ -20,22 +20,22 @@ export default function HeroSection() {
               Empowering displaced women and climate refugees in Pakistan through the ancient art of natural dyeing, mural therapy, and creative healing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                className="group bg-gradient-to-r from-accent to-accent/90 text-accent-foreground px-8 py-4 rounded-xl font-medium text-lg hover-lift hover:from-accent/90 hover:to-accent flex items-center justify-center space-x-3"
+              <a
+                href="/api/download/natural-dye-guide.pdf"
+                download="Rang-e-Umeed-Natural-Dye-Guide.pdf"
+                className="group inline-flex items-center justify-center bg-gradient-to-r from-accent to-accent/90 text-accent-foreground px-8 py-4 rounded-xl font-medium text-lg hover-lift hover:from-accent/90 hover:to-accent space-x-3 transition-all"
                 data-testid="button-download-guide"
               >
                 <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>Download Natural Dye Guide</span>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-medium text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              </a>
+              <a
+                href="#about"
+                className="inline-flex items-center justify-center border-2 border-primary text-primary px-8 py-4 rounded-xl font-medium text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 data-testid="button-learn-more"
               >
                 Learn More
-              </Button>
+              </a>
             </div>
           </div>
           <div className="relative">
