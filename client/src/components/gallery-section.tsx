@@ -1,6 +1,6 @@
 const galleryItems = [
   {
-    src: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+    src: "/images/workshop.png",
     alt: "Women collaborating in a natural dye workshop, hands stained with colorful plant-based dyes",
     title: "Workshop Collaboration",
     subtitle: "Learning together",
@@ -14,7 +14,7 @@ const galleryItems = [
     testId: "gallery-item-fabrics"
   },
   {
-    src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+    src: "/images/mural.png",
     alt: "Vibrant community mural depicting themes of hope, nature, and cultural heritage",
     title: "Community Mural",
     subtitle: "Stories of resilience",
