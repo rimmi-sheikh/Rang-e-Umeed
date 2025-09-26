@@ -7,7 +7,7 @@ const galleryItems = [
     testId: "gallery-item-workshop"
   },
   {
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+    src: "\public\dyes.png",
     alt: "Beautiful array of naturally dyed fabric samples in earthy tones hanging to dry",
     title: "Natural Dye Results",
     subtitle: "Vibrant earth colors",
@@ -29,7 +29,7 @@ const galleryItems = [
     colSpan: "md:col-span-2"
   },
   {
-    src: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
+    src: "\public\tradways.png",
     alt: "Close-up of skilled hands working with natural plant materials to create dyes",
     title: "Traditional Techniques",
     subtitle: "Ancestral knowledge",
