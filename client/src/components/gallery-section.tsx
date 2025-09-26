@@ -7,7 +7,7 @@ const galleryItems = [
     testId: "gallery-item-workshop"
   },
   {
-    src: "/public/dyes.png",
+    src: "/images/dyes.png",
     alt: "Beautiful array of naturally dyed fabric samples in earthy tones hanging to dry",
     title: "Natural Dye Results",
     subtitle: "Vibrant earth colors",
@@ -29,7 +29,7 @@ const galleryItems = [
     colSpan: "md:col-span-2"
   },
   {
-    src: "/public/tradways.png",
+    src: "/images/tradways.png",
     alt: "Close-up of skilled hands working with natural plant materials to create dyes",
     title: "Traditional Techniques",
     subtitle: "Ancestral knowledge",
